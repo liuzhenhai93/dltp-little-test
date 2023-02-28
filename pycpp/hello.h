@@ -1,6 +1,3 @@
-#ifndef UNTITLED_LIBRARY_H
-#define UNTITLED_LIBRARY_H
-
+#pragma once
 void hello();
 
-#endif //UNTITLED_LIBRARY_H
