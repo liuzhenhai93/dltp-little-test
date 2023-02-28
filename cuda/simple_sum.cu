@@ -11,18 +11,18 @@ __global__ void AddKernel(float *x, float *y, float *z, int n) {
     }
 }
 
-void Add1d(const float *x, const float *y, float *z, int n) {
+void Add1d(float *x, float *y, float *z, int n) {
     for (int i = 0; i < n; i++) {
         z[i] = x[i] + y[i];
     }
 }
 
-void Add2d(const float *x, const float *y, float *z, int m, int n) {
+void Add2d(float *x, float *y, float *z, int m, int n) {
     Add1d(x, y, z, m * n);
 }
 
 
-void Add1dWithKernel(const float *x, const float *y, float *z, int n) {
+void Add1dWithKernel(float *x, float *y, float *z, int n) {
     float *x_d, *y_d, *z_d;
     // allocate gpu memory
     cudaMalloc( (void**)&x_d, n * sizeof(float) );
@@ -40,6 +40,6 @@ void Add1dWithKernel(const float *x, const float *y, float *z, int n) {
     cudaFree( z_d );
 }
 
-void Add2dWithKernel(const float *x, const float *y, float *z, int m, int n) {
+void Add2dWithKernel(float *x, float *y, float *z, int m, int n) {
     Add1dWithKernel(x, y, z, m *  n);
 }

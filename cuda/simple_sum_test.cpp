@@ -14,10 +14,11 @@ void Init(float *a, float *b, int n) {
     }
 }
 
-bool CheckPrecision(float *a, float *b, int n) {
+void CheckPrecision(float *a, float *b, int n) {
     for (int i = 0; i < n; i++) {
         if (std::abs(a[i] - b[i]) > 1e-5) {
             std::cout << "a[" << i << "]: " << a[i] << "b[" << i << "]: " << b[i] << std::endl;
+            return;
         }
     }
 }

@@ -4,10 +4,10 @@
 
 #pragma once
 
-void Add1d(const float *x, const float *y, float *z, int n);
+void Add1d(float *x, float *y, float *z, int n);
 
-void Add2d(const float *x, const float *y, float *z, int m, int n);
+void Add2d(float *x, float *y, float *z, int m, int n);
 
-void Add1dWithKernel(const float *x, const float *y, float *z, int n);
+void Add1dWithKernel(float *x, float *y, float *z, int n);
 
-void Add2dWithKernel(const float *x, const float *y, float *z, int m, int n);
+void Add2dWithKernel(float *x, float *y, float *z, int m, int n);
